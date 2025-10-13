@@ -13,7 +13,7 @@ Automated segmentation of collagen sub-types in histopathology slides for permea
 
 ### Research Paper 2 — ML Data Optimization / Robustness  
 Compared machine-learning models under different data corruptions to evaluate robustness and validation stability.  
-[View Code & Docs → GitHub Repository](https://github.com/IlayGibor/ml-robustness)
+[View Code & Docs → GitHub Repository](./projects/research2/)
 
 ---
 
@@ -21,11 +21,11 @@ Compared machine-learning models under different data corruptions to evaluate ro
 
 ### FTC Robotics Codebase  
 Full autonomous and tele-op control system for our FTC robot, including vision pipelines and PID tuning.  
-[View Code → GitHub Repository](https://github.com/IlayGibor/ftc-autonomous)
+[View Code → GitHub Repository](./projects/robotics/)
 
 ### KoHack App — Hackathon Project (2nd Place)  
 24-hour hackathon app built to [describe problem later]; front-end + back-end completed under tight deadline.  
-[View Code → GitHub Repository](https://github.com/IlayGibor/kohack-app)
+[View Code → GitHub Repository](./projects/kohack/)
 
 ---
 

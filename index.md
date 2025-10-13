@@ -9,7 +9,7 @@ This site collects my research and engineering projects with links to the comple
 
 ### Research Paper 1 — Collagen Segmentation  
 Automated segmentation of collagen sub-types in histopathology slides for permeability simulation.  
-[View Code & Docs → GitHub Repository](https://github.com/IlayGibor/research-collagen-segmentation)
+[View Code & Docs → GitHub Repository](./projects/research1/)
 
 ### Research Paper 2 — ML Data Optimization / Robustness  
 Compared machine-learning models under different data corruptions to evaluate robustness and validation stability.  

@@ -3,54 +3,63 @@ layout: default
 title: Ilay Gibor — Engineering Portfolio
 ---
 
-<!-- Paste this file as /index.md in your GitHub Pages repo. It works without any build tools. -->
+<!-- One-file, no-build landing page. Paste into /index.md on GitHub Pages. -->
 <style>
   :root{
-    --bg:#0b0c10; --card:#111217; --ink:#e6e6f0; --muted:#a9aec1; --brand:#6ea8fe; --accent:#8bffc3; --border:#1d2030;
+    --bg:#0a0b10; --surface:#10121a; --card:#121523; --ink:#e9ecf4; --muted:#aab2cc; --brand:#6aa9ff; --brand2:#9fffe2; --border:#1d2234; --glow:#7ab8ff66;
   }
   html{scroll-behavior:smooth}
-  body{margin:0;font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";color:var(--ink);background:radial-gradient(1200px 600px at 20% -10%, #12203a 0%, transparent 60%), radial-gradient(1200px 600px at 100% 10%, #1a1d2b 0%, transparent 55%), var(--bg)}
+  body{margin:0;font:16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--ink); background:radial-gradient(1200px 600px at 10% -10%, #122043 0%, transparent 60%), radial-gradient(1200px 600px at 100% 0%, #1a1e2e 0%, transparent 60%), var(--bg)}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1100px;margin:0 auto;padding:24px}
-  .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(10px);background:rgba(11,12,16,.6);border-bottom:1px solid var(--border);z-index:10}
+  .wrap{max-width:1150px;margin:0 auto;padding:24px}
+  .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(10px);background:rgba(10,11,16,.6);border-bottom:1px solid var(--border);z-index:50}
   .nav .inner{display:flex;align-items:center;justify-content:space-between}
-  .nav a.logo{font-weight:700;letter-spacing:.2px}
-  .nav .links a{color:var(--muted);margin-left:18px}
-  .nav .links a:hover{color:var(--ink)}
-  .hero{padding:72px 24px 40px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+  .logoDot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 0 18px var(--glow)}
+  .tabs a{color:var(--muted);margin-left:18px;font-weight:500}
+  .tabs a:hover{color:var(--ink)}
+  .hero{padding:84px 24px 56px; position:relative; overflow:hidden}
+  .ribbon{position:absolute; inset: -20% -20% auto auto; height:280px; width:820px; transform:rotate(15deg); background:linear-gradient(90deg, transparent, #ffffff05, transparent); filter:blur(4px)}
+  .h-title{font-size:56px; line-height:1.05; margin:.2em 0 .15em; letter-spacing:.3px}
+  .h-sub{font-size:18px; color:var(--muted); max-width:720px}
+  .btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:650;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+  .btn.primary{background:linear-gradient(135deg,var(--brand),#6ee7ff); color:#07101a;border:none}
+  .btn:hover{transform:translateY(-1px); box-shadow:0 14px 34px rgba(0,0,0,.25), 0 0 0 2px #ffffff08}
+  .section{padding:48px 24px}
+  .section h2{font-size:30px;margin:0 0 10px}
+  .section p.lead{color:var(--muted);max-width:820px}
   .grid{display:grid;gap:18px}
-  @media (min-width:900px){.grid-2{grid-template-columns:1.2fr 1fr}}
-  h1{font-size:40px;line-height:1.15;margin:.2em 0}
-  h2{font-size:28px;margin:0 0 8px}
-  h3{font-size:18px;margin:0 0 8px}
-  p{margin:0 0 10px;color:var(--muted)}
-  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#9aa4bf}
-  .badge{display:inline-block;border:1px solid var(--border);padding:4px 8px;border-radius:999px;font-size:12px;color:var(--muted);margin:8px 8px 0 0}
-  .cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--brand),#6ee7ff);color:#081018;border:none;padding:10px 14px;border-radius:10px;font-weight:600}
-  .cta.secondary{background:transparent;border:1px solid var(--border);color:var(--ink)}
-  .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));border:1px solid var(--border);border-radius:16px;padding:18px}
-  .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.25);transform:translateY(-2px);transition:.25s}
-  .subtle{font-size:14px;color:var(--muted)}
-  .quote{border-left:3px solid var(--border);padding:12px 16px;border-radius:8px;background:rgba(255,255,255,.03)}
-  .pillrow{display:flex;flex-wrap:wrap;gap:8px}
-  .footer{border-top:1px solid var(--border);padding:28px 24px;color:var(--muted)}
-  .fade{opacity:0;transform:translateY(8px);animation:rise .7s .15s forwards}
-  @keyframes rise{to{opacity:1;transform:none}}
-  .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .grid-2{grid-template-columns:1fr}
+  @media(min-width:860px){.grid-2{grid-template-columns:1fr 1fr}}
   .cards{display:grid;gap:18px}
-  @media(min-width:800px){.cards{grid-template-columns:1fr 1fr}}
-  .title{background:linear-gradient(90deg,#dbe8ff 0%, #9fd7ff 60%, #b2ffe1 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted)}
-  .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .cards-3x2{grid-template-columns:1fr;}
+  @media(min-width:760px){.cards-3x2{grid-template-columns:1fr 1fr}}
+  @media(min-width:1040px){.cards-3x2{grid-template-columns:1fr 1fr 1fr}}
+  .cards-4x3{grid-template-columns:1fr 1fr}
+  @media(min-width:900px){.cards-4x3{grid-template-columns:repeat(4,1fr)}}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));border:1px solid var(--border);border-radius:18px;padding:16px; position:relative; overflow:hidden; transition:.25s}
+  .card:hover{transform:translateY(-3px); box-shadow:0 20px 50px rgba(0,0,0,.35)}
+  .card::after{content:""; position:absolute; inset:-40%; background:radial-gradient(500px 200px at var(--mx,50%) var(--my,50%), #7aa8ff15, transparent 60%); transition:.15s}
+  .thumb{aspect-ratio: 16/10; border-radius:12px; background:linear-gradient(135deg,#1c2740,#0e1324); border:1px dashed #2a3350; display:flex;align-items:center;justify-content:center; color:#94a3b8; font-weight:700}
+  .thumb svg{opacity:.8}
+  .c-title{font-weight:700;margin:10px 0 6px}
+  .c-text{color:var(--muted); font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px}
+  .footer{border-top:1px solid var(--border);padding:28px 24px;color:var(--muted)}
+  .center{display:flex;align-items:center;justify-content:center}
+  .hero-stack{margin-top:22px; display:flex; flex-direction:column; gap:12px}
 </style>
 
 <!-- NAV -->
 <div class="nav">
   <div class="wrap inner">
-    <a class="logo" href="#top">Ilay Gibor</a>
-    <div class="links">
-      <a href="#research">Research</a>
-      <a href="#engineering">Engineering</a>
+    <a class="logo" href="#top"><span class="logoDot"></span> Ilay Gibor</a>
+    <div class="tabs">
+      <a href="#projects">Research</a>
+      <a href="#projects">Robotics</a>
+      <a href="#impact">Competitions</a>
+      <a href="#impact">Recognition</a>
       <a href="#contact">Contact</a>
       <a href="https://github.com/IlayGibor">GitHub</a>
     </div>
@@ -58,87 +67,172 @@ title: Ilay Gibor — Engineering Portfolio
 </div>
 
 <!-- HERO -->
-<section id="top" class="wrap hero grid grid-2">
-  <div>
-    <div class="kicker fade">Engineering Portfolio <span class="dot"></span> Robotics • ML • Bioengineering</div>
-    <h1 class="title fade">Ilay Gibor — Engineering Portfolio</h1>
-    <p class="fade">Welcome! I’m Ilay, a high-school engineer working at the intersection of <strong>robotics</strong>, <strong>machine learning</strong>, and <strong>bioengineering</strong>.<br>This site collects my research and engineering projects with links to the complete code and documentation.</p>
-    <div class="pillrow fade">
-      <span class="badge">Robotics</span>
-      <span class="badge">Machine Learning</span>
-      <span class="badge">Bioengineering</span>
-      <span class="badge">Open‑source</span>
-    </div>
-    <div class="btnrow fade">
-      <a class="cta" href="#research">Explore Projects →</a>
-      <a class="cta secondary" href="https://github.com/IlayGibor">GitHub Profile</a>
-    </div>
-  </div>
-  <div class="fade">
-    <div class="card">
-      <h3 style="margin:0 0 6px">Focus Areas</h3>
-      <p class="subtle">Collagen segmentation • Data robustness • Vision pipelines • PID tuning • Autonomous & Tele‑op • Full‑stack prototypes</p>
-    </div>
-    <div class="card" style="margin-top:12px">
-      <h3 style="margin:0 0 6px">Reproducibility</h3>
-      <p class="subtle">All repositories include detailed READMEs and <code>requirements.txt</code> files for reproducibility.</p>
+<section id="top" class="wrap hero">
+  <div class="ribbon"></div>
+  <h1 class="h-title">Ilay Gibor.</h1>
+  <div class="h-sub">Welcome to my engineering portfolio where I showcase my work and skills.</div>
+
+  <div class="hero-stack">
+    <p class="h-sub">I’m a high‑school engineer focused on robotics, machine learning, and bioengineering. I build reproducible systems, lead technical teams, and ship projects end‑to‑end—from research ideas to working code and competition‑ready builds.</p>
+    <div class="btnrow">
+      <a class="btn primary" href="#projects">View my work</a>
+      <a class="btn" href="#skills">Skills & expertise</a>
+      <a class="btn" href="#impact">Impact & recognition</a>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH -->
-<section id="research" class="wrap" style="padding:20px 24px 8px">
-  <div class="eyebrow">Research Projects</div>
-  <h2>Applied ML & Bioengineering</h2>
-  <p>Automated segmentation of collagen sub‑types in histopathology slides for permeability simulation; and comparative studies of model robustness under controlled data corruptions.</p>
+<!-- PROJECTS -->
+<section id="projects" class="section wrap">
+  <h2>Projects</h2>
+  <p class="lead">A selection of hands‑on builds and research implementations. Click any card to open its dedicated page.</p>
 
-  <div class="cards" style="margin-top:14px">
-    <div class="card">
-      <h3>Research Paper 1 — Collagen Segmentation</h3>
-      <p class="subtle">Automated segmentation of collagen sub‑types in histopathology slides for permeability simulation.</p>
-      <p><a class="cta secondary" href="./projects/research1/">View Code & Docs → GitHub Repository</a></p>
-    </div>
-    <div class="card">
-      <h3>Research Paper 2 — ML Data Optimization / Robustness</h3>
-      <p class="subtle">Compared machine‑learning models under different data corruptions to evaluate robustness and validation stability.</p>
-      <p><a class="cta secondary" href="./projects/research2/">View Code & Docs → GitHub Repository</a></p>
-    </div>
+  <div class="cards cards-3x2" id="projCards">
+    <!-- Six project placeholder cards -->
+    <!-- Repeatable card pattern -->
+    <a class="card" href="#" onmousemove="this.style.setProperty('--mx', event.offsetX+'px'); this.style.setProperty('--my', event.offsetY+'px');">
+      <div class="thumb">Project 1 • Image</div>
+      <div class="c-title">Project 1</div>
+      <div class="c-text">Short one‑liner describing what the project does and why it matters.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Project 2 • Image</div>
+      <div class="c-title">Project 2</div>
+      <div class="c-text">Short one‑liner describing what the project does and why it matters.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Project 3 • Image</div>
+      <div class="c-title">Project 3</div>
+      <div class="c-text">Short one‑liner describing what the project does and why it matters.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Project 4 • Image</div>
+      <div class="c-title">Project 4</div>
+      <div class="c-text">Short one‑liner describing what the project does and why it matters.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Project 5 • Image</div>
+      <div class="c-title">Project 5</div>
+      <div class="c-text">Short one‑liner describing what the project does and why it matters.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Project 6 • Image</div>
+      <div class="c-title">Project 6</div>
+      <div class="c-text">Short one‑liner describing what the project does and why it matters.</div>
+    </a>
   </div>
 </section>
 
-<!-- ENGINEERING -->
-<section id="engineering" class="wrap" style="padding:24px">
-  <div class="eyebrow">Engineering & Applied Projects</div>
-  <h2>Robotics, Systems, and Hackathons</h2>
-  <p>Selected builds spanning autonomous control, computer vision, and full‑stack prototyping.</p>
+<!-- SKILLS -->
+<section id="skills" class="section wrap">
+  <h2>Skills</h2>
+  <p class="lead">Core tools and domains I use across robotics, ML, and systems work.</p>
+  <div class="cards cards-4x3">
+    <!-- 12 skill squares with icon placeholders -->
+    
+    <!-- Row 1 -->
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">👾</div>
+      <div class="c-title center" style="justify-content:center">Skill 1</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🧠</div>
+      <div class="c-title center" style="justify-content:center">Skill 2</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">⚙️</div>
+      <div class="c-title center" style="justify-content:center">Skill 3</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">📐</div>
+      <div class="c-title center" style="justify-content:center">Skill 4</div>
+    </div></div>
 
-  <div class="cards" style="margin-top:14px">
-    <div class="card">
-      <h3>FTC Robotics Codebase</h3>
-      <p class="subtle">Full autonomous and tele‑op control system for our FTC robot, including vision pipelines and PID tuning.</p>
-      <p><a class="cta secondary" href="./projects/robotics/">View Code → GitHub Repository</a></p>
-    </div>
-    <div class="card">
-      <h3>KoHack App — Hackathon Project (2nd Place)</h3>
-      <p class="subtle">24‑hour hackathon app built to [describe problem later]; front‑end + back‑end completed under tight deadline.</p>
-      <p><a class="cta secondary" href="./projects/kohack/">View Code → GitHub Repository</a></p>
-    </div>
+    <!-- Row 2 -->
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🛰️</div>
+      <div class="c-title center" style="justify-content:center">Skill 5</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🤖</div>
+      <div class="c-title center" style="justify-content:center">Skill 6</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🧪</div>
+      <div class="c-title center" style="justify-content:center">Skill 7</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🖥️</div>
+      <div class="c-title center" style="justify-content:center">Skill 8</div>
+    </div></div>
+
+    <!-- Row 3 -->
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🧩</div>
+      <div class="c-title center" style="justify-content:center">Skill 9</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🕹️</div>
+      <div class="c-title center" style="justify-content:center">Skill 10</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">📊</div>
+      <div class="c-title center" style="justify-content:center">Skill 11</div>
+    </div></div>
+    <div class="card center"><div>
+      <div class="thumb" style="aspect-ratio:1/1; margin-bottom:10px">🔧</div>
+      <div class="c-title center" style="justify-content:center">Skill 12</div>
+    </div></div>
   </div>
+</section>
 
-  <div class="quote" style="margin-top:16px">
-    <em>“All repositories include detailed READMEs and requirements.txt files for reproducibility.”</em>
+<!-- IMPACT / RECOGNITION -->
+<section id="impact" class="section wrap">
+  <h2>Impact & Recognition</h2>
+  <p class="lead">Press, awards, recommendations, and posts that highlight outcomes from my work.</p>
+  <div class="cards cards-3x2">
+    <!-- 6 visual placeholders (expand to 8 later) -->
+    <a class="card" href="#">
+      <div class="thumb">Recognition 1</div>
+      <div class="c-title">Recognition 1</div>
+      <div class="c-text">Link to recommendation letter, press, or post.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Recognition 2</div>
+      <div class="c-title">Recognition 2</div>
+      <div class="c-text">Link to recommendation letter, press, or post.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Recognition 3</div>
+      <div class="c-title">Recognition 3</div>
+      <div class="c-text">Link to recommendation letter, press, or post.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Recognition 4</div>
+      <div class="c-title">Recognition 4</div>
+      <div class="c-text">Link to recommendation letter, press, or post.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Recognition 5</div>
+      <div class="c-title">Recognition 5</div>
+      <div class="c-text">Link to recommendation letter, press, or post.</div>
+    </a>
+    <a class="card" href="#">
+      <div class="thumb">Recognition 6</div>
+      <div class="c-title">Recognition 6</div>
+      <div class="c-text">Link to recommendation letter, press, or post.</div>
+    </a>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="wrap" style="padding:12px 24px 64px">
-  <div class="eyebrow">Contact</div>
+<section id="contact" class="section wrap">
   <h2>Let’s connect</h2>
-  <p><strong>Email:</strong> your.email@example.com<br>
-     <strong>GitHub:</strong> <a href="https://github.com/IlayGibor">github.com/IlayGibor</a></p>
+  <p class="lead"><strong>Email:</strong> your.email@example.com<br>
+  <strong>GitHub:</strong> <a href="https://github.com/IlayGibor">github.com/IlayGibor</a></p>
   <div class="btnrow">
-    <a class="cta" href="mailto:your.email@example.com">Email Me</a>
-    <a class="cta secondary" href="https://github.com/IlayGibor">GitHub Profile</a>
+    <a class="btn primary" href="mailto:your.email@example.com">Email Me</a>
+    <a class="btn" href="https://github.com/IlayGibor">GitHub Profile</a>
   </div>
 </section>
 
@@ -149,4 +243,14 @@ title: Ilay Gibor — Engineering Portfolio
     <div>Built with static HTML/CSS. Zero dependencies.</div>
   </div>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  // glow follows cursor on cards
+  for(const card of document.querySelectorAll('.card')){
+    card.addEventListener('mousemove', e=>{
+      const rect = e.currentTarget.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - rect.left)+'px');
+      card.style.setProperty('--my', (e.clientY - rect.top)+'px');
+    });
+  }
+</script>

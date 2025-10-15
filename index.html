@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ilay Gibor — Portfolio Preview</title>
+  <title>Ilay Gibor — Portfolio</title>
   <style>
   :root{
     --bg:#0a0b10; --surface:#10121a; --card:#121523; --ink:#e9ecf4; --muted:#aab2cc; --brand:#6aa9ff; --brand2:#9fffe2; --border:#1d2234; --glow:#7ab8ff66;
@@ -35,7 +35,7 @@
   .grid-2{grid-template-columns:1fr}
   @media(min-width:860px){.grid-2{grid-template-columns:1.15fr .85fr; align-items:start;}}
 
-  .aboutPhoto{border-radius:20px; width:380px; height:380px; object-fit:cover; background:#0f152a; border:1px solid var(--border); box-shadow:0 20px 40px rgba(0,0,0,.35); position:relative; top:-100; left:-100;}
+  .aboutPhoto{border-radius:20px; width:380px; height:380px; object-fit:cover; background:#0f152a; border:1px solid var(--border); box-shadow:0 20px 40px rgba(0,0,0,.35); position:relative; top:-100px; left:-100px;}
   .heroRight{justify-self:end; margin-right:0;}
 
   .section{padding:64px 48px; scroll-margin-top:96px}
@@ -48,13 +48,18 @@
   @media(min-width:760px){.cards-3x2{grid-template-columns:1fr 1fr}}
   @media(min-width:1200px){.cards-3x2{grid-template-columns:1fr 1fr 1fr}}
 
-  .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));border:1px solid var(--border);border-radius:18px;padding:20px; position:relative; overflow:hidden; transition:.25s; text-align:center;}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));border:1px solid var(--border);border-radius:18px;padding:20px; position:relative; overflow:hidden; transition:.25s; text-align:left;}
   .card:hover{transform:translateY(-3px); box-shadow:0 20px 50px rgba(0,0,0,.35)}
-  .card::after{content:""; position:absolute; inset:-40%; background:radial-gradient(500px 200px at var(--mx,50%) var(--my,50%), #7aa8ff15, transparent 60%); transition:.15s}
+  .card > *{position:relative; z-index:1}
+  .card::after{content:""; position:absolute; inset:-40%; background:radial-gradient(500px 200px at var(--mx,50%) var(--my,50%), #7aa8ff15, transparent 60%); transition:.15s; pointer-events:none; z-index:0}
 
-  .thumb{aspect-ratio:16/10; border-radius:12px; background:linear-gradient(135deg,#1c2740,#0e1324); border:1px dashed #2a3350; display:flex;align-items:center;justify-content:center; color:#94a3b8; font-weight:700; margin:10px 0;}
+  .thumb{aspect-ratio:16/10; border-radius:12px; background:linear-gradient(135deg,#1c2740,#0e1324); border:1px dashed #2a3350; display:flex;align-items:center;justify-content:center; color:#94a3b8; font-weight:700; margin:10px 0; text-align:center; overflow:hidden;}
+  .thumb img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
   .c-title{font-weight:700;margin:10px 0 6px;font-size:16px;text-align:center;}
-  .c-text{color:var(--muted); font-size:14px}
+  .c-desc{color:var(--muted); font-size:14px; margin:10px 0 14px; max-width:90%; text-align:left;}
+  .plinklist{display:flex; flex-direction:column; gap:8px; align-items:flex-start}
+  .plinklist a{border:1px solid var(--border); padding:8px 12px; border-radius:10px; font-size:13px; background:rgba(255,255,255,.02); color:var(--ink); transition:0.3s}
+  .plinklist a:hover{background:var(--brand); color:#000; transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,.25)}
 
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease}
   .reveal.in{opacity:1; transform:none}
@@ -98,21 +103,74 @@
   </div>
 </section>
 
-<!-- PROJECTS SECTION -->
+<!-- PROJECTS -->
 <section id="projects" class="section wrap reveal">
   <h2>Projects</h2>
   <p class="lead">Below are projects and research I’ve contributed to. Source code and related links are available within each card.</p>
   <div class="cards cards-3x2">
-    <a class="card" href="#"><div class="c-title">Collagen Segmentation Research</div><div class="thumb">Image</div><div class="c-text"></div></a>
-    <a class="card" href="#"><div class="c-title">FTC Robot - 2025</div><div class="thumb">Image</div><div class="c-text"></div></a>
-    <a class="card" href="#"><div class="c-title">Data Optimization Research</div><div class="thumb">Image</div><div class="c-text"></div></a>
-    <a class="card" href="#"><div class="c-title">Kohack Competition Submission</div><div class="thumb">Image</div><div class="c-text"></div></a>
-    <a class="card" href="#"><div class="c-title">Form Detector Development</div><div class="thumb">Image</div><div class="c-text"></div></a>
-    <a class="card" href="#"><div class="c-title">FTC Robot - 2024</div><div class="thumb">Image</div><div class="c-text"></div></a>
+    <article class="card">
+      <div class="c-title">Collagen Segmentation Research</div>
+      <div class="thumb"><img src="./assets/collagen.png" alt="Collagen Segmentation Visualization"></div>
+      <div class="c-desc">Built an AI-based pipeline converting liver tissue images into permeability maps for the Digital Twin Liver project, part of a Nature-pending study at Long Island University.</div>
+      <div class="plinklist">
+        <a href="https://docs.google.com/document/d/17Q_LNF-n0JVM9fRW1HDlYAwk0XARWKPZAb4cJkOkzic/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Research Overview:</a>
+        <a href="https://github.com/IlayGibor" target="_blank" rel="noopener noreferrer">Source-Code.</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="c-title">FTC Robot - 2025</div>
+      <div class="thumb">Image</div>
+      <div class="c-desc">Short one sentence description placeholder goes here for preview purposes.</div>
+      <div class="plinklist">
+        <a href="#">Link 1:</a>
+        <a href="#">Link 2:</a>
+        <a href="#">Link 3:</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="c-title">Data Optimization Research</div>
+      <div class="thumb">Image</div>
+      <div class="c-desc">Short one sentence description placeholder goes here for preview purposes.</div>
+      <div class="plinklist">
+        <a href="#">Link 1:</a>
+        <a href="#">Link 2:</a>
+        <a href="#">Link 3:</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="c-title">Kohack Competition Submission</div>
+      <div class="thumb">Image</div>
+      <div class="c-desc">Short one sentence description placeholder goes here for preview purposes.</div>
+      <div class="plinklist">
+        <a href="#">Link 1:</a>
+        <a href="#">Link 2:</a>
+        <a href="#">Link 3:</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="c-title">Form Detector Development</div>
+      <div class="thumb">Image</div>
+      <div class="c-desc">Short one sentence description placeholder goes here for preview purposes.</div>
+      <div class="plinklist">
+        <a href="#">Link 1:</a>
+        <a href="#">Link 2:</a>
+        <a href="#">Link 3:</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="c-title">FTC Robot - 2024</div>
+      <div class="thumb">Image</div>
+      <div class="c-desc">Short one sentence description placeholder goes here for preview purposes.</div>
+      <div class="plinklist">
+        <a href="#">Link 1:</a>
+        <a href="#">Link 2:</a>
+        <a href="#">Link 3:</a>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- SKILLS SECTION -->
+<!-- SKILLS -->
 <section id="skills" class="section wrap reveal">
   <h2>Skills</h2>
   <p class="lead">Core tools, skills, and domains I use across my work.</p>
@@ -163,7 +221,7 @@
   </div>
 </section>
 
-<!-- IMPACT SECTION -->
+<!-- IMPACT -->
 <section id="impact" class="section wrap reveal">
   <h2>Impact & Recognition</h2>
   <p class="lead">Press each card to view awards, acknowledgements, and validation for my work and projects.</p>
@@ -176,7 +234,7 @@
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section id="contact" class="section wrap reveal">
   <h2>Let’s connect</h2>
   <p class="lead">

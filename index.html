@@ -1,4 +1,10 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilay Gibor — Portfolio Preview</title>
+  <style>
   :root{
     --bg:#0a0b10; --surface:#10121a; --card:#121523; --ink:#e9ecf4; --muted:#aab2cc; --brand:#6aa9ff; --brand2:#9fffe2; --border:#1d2234; --glow:#7ab8ff66;
   }
@@ -32,12 +38,8 @@
   .aboutPhoto{border-radius:20px; width:380px; height:380px; object-fit:cover; background:#0f152a; border:1px solid var(--border); box-shadow:0 20px 40px rgba(0,0,0,.35); position:relative; top:-100; left:-100;}
   .heroRight{justify-self:end; margin-right:0;}
 
-  /* You can fine-tune the photo position here:
-     The image is located in the <img> tag inside .heroRight (~line 120).
-     Adjust these two properties below for manual control: */
-  /* Example: top:-20px; left:10px; */
-
   .section{padding:64px 48px; scroll-margin-top:96px}
+  #projects h2, #projects p.lead, #skills h2, #skills p.lead, #impact h2, #impact p.lead {text-align:center; margin-left:auto; margin-right:auto;}
   .section h2{font-size:34px;margin:0 0 10px}
   .section p.lead{color:var(--muted);max-width:820px}
 
@@ -46,17 +48,19 @@
   @media(min-width:760px){.cards-3x2{grid-template-columns:1fr 1fr}}
   @media(min-width:1200px){.cards-3x2{grid-template-columns:1fr 1fr 1fr}}
 
-  .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));border:1px solid var(--border);border-radius:18px;padding:20px; position:relative; overflow:hidden; transition:.25s}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));border:1px solid var(--border);border-radius:18px;padding:20px; position:relative; overflow:hidden; transition:.25s; text-align:center;}
   .card:hover{transform:translateY(-3px); box-shadow:0 20px 50px rgba(0,0,0,.35)}
   .card::after{content:""; position:absolute; inset:-40%; background:radial-gradient(500px 200px at var(--mx,50%) var(--my,50%), #7aa8ff15, transparent 60%); transition:.15s}
 
-  .thumb{aspect-ratio:16/10; border-radius:12px; background:linear-gradient(135deg,#1c2740,#0e1324); border:1px dashed #2a3350; display:flex;align-items:center;justify-content:center; color:#94a3b8; font-weight:700}
-  .c-title{font-weight:700;margin:10px 0 6px;font-size:16px}
+  .thumb{aspect-ratio:16/10; border-radius:12px; background:linear-gradient(135deg,#1c2740,#0e1324); border:1px dashed #2a3350; display:flex;align-items:center;justify-content:center; color:#94a3b8; font-weight:700; margin:10px 0;}
+  .c-title{font-weight:700;margin:10px 0 6px;font-size:16px;text-align:center;}
   .c-text{color:var(--muted); font-size:14px}
 
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease}
   .reveal.in{opacity:1; transform:none}
-</style>
+  </style>
+</head>
+<body>
 
 <!-- NAV -->
 <div class="nav">
@@ -80,7 +84,7 @@
     <h1 class="h-title">About Me:</h1>
     <div class="grid grid-2" style="gap:24px">
       <div>
-        <p class="h-sub measure">I’m a high‑school engineer focused on robotics, machine learning, and bioengineering. I build reproducible systems, lead technical teams, and ship projects end‑to‑end—from research ideas to working code and competition‑ready builds.</p>
+        <p class="h-sub measure">My name is Ilay Gibor. I am a high school senior who moved to the U.S. and am passionate about programming, machine learning, and problem-solving. I have a strong background in mathematics and software engineering and have contributed to projects like The Digital Liver Twin, Form Detector app, and leading my school’s robotics team.</p>
         <div class="btnrow">
           <a class="btn primary" href="#projects">View my work</a>
           <a class="btn" href="#skills">Skills & expertise</a>
@@ -94,24 +98,24 @@
   </div>
 </section>
 
-<!-- PROJECTS SECTION (restored) -->
+<!-- PROJECTS SECTION -->
 <section id="projects" class="section wrap reveal">
   <h2>Projects</h2>
-  <p class="lead">A selection of hands‑on builds and research implementations. Click any card to open its dedicated page.</p>
+  <p class="lead">Below are projects and research I’ve contributed to. Source code and related links are available within each card.</p>
   <div class="cards cards-3x2">
-    <a class="card" href="#"><div class="thumb">Project 1 • Image</div><div class="c-title">Project 1</div><div class="c-text">Short description here.</div></a>
-    <a class="card" href="#"><div class="thumb">Project 2 • Image</div><div class="c-title">Project 2</div><div class="c-text">Short description here.</div></a>
-    <a class="card" href="#"><div class="thumb">Project 3 • Image</div><div class="c-title">Project 3</div><div class="c-text">Short description here.</div></a>
-    <a class="card" href="#"><div class="thumb">Project 4 • Image</div><div class="c-title">Project 4</div><div class="c-text">Short description here.</div></a>
-    <a class="card" href="#"><div class="thumb">Project 5 • Image</div><div class="c-title">Project 5</div><div class="c-text">Short description here.</div></a>
-    <a class="card" href="#"><div class="thumb">Project 6 • Image</div><div class="c-title">Project 6</div><div class="c-text">Short description here.</div></a>
+    <a class="card" href="#"><div class="c-title">Collagen Segmentation Research</div><div class="thumb">Image</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="c-title">FTC Robot - 2025</div><div class="thumb">Image</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="c-title">Data Optimization Research</div><div class="thumb">Image</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="c-title">Kohack Competition Submission</div><div class="thumb">Image</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="c-title">Form Detector Development</div><div class="thumb">Image</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="c-title">FTC Robot - 2024</div><div class="thumb">Image</div><div class="c-text"></div></a>
   </div>
 </section>
 
 <!-- SKILLS SECTION -->
 <section id="skills" class="section wrap reveal">
   <h2>Skills</h2>
-  <p class="lead">Core tools and domains I use across robotics, ML, and systems work.</p>
+  <p class="lead">Core tools, skills, and domains I use across my work.</p>
   <style>
     .skillwrap{display:grid; gap:16px; margin-top:12px}
     @media(min-width:900px){.skillwrap{grid-template-columns:1fr 1fr 1fr}}
@@ -162,25 +166,35 @@
 <!-- IMPACT SECTION -->
 <section id="impact" class="section wrap reveal">
   <h2>Impact & Recognition</h2>
-  <p class="lead">Press, awards, recommendations, and posts that highlight outcomes from my work.</p>
+  <p class="lead">Press each card to view awards, acknowledgements, and validation for my work and projects.</p>
   <div class="cards cards-3x2">
-    <a class="card" href="#"><div class="thumb">Recognition 1</div><div class="c-title">Recognition 1</div><div class="c-text">Link to recommendation letter, press, or post.</div></a>
-    <a class="card" href="#"><div class="thumb">Recognition 2</div><div class="c-title">Recognition 2</div><div class="c-text">Link to recommendation letter, press, or post.</div></a>
-    <a class="card" href="#"><div class="thumb">Recognition 3</div><div class="c-title">Recognition 3</div><div class="c-text">Link to recommendation letter, press, or post.</div></a>
-    <a class="card" href="#"><div class="thumb">Recognition 4</div><div class="c-title">Recognition 4</div><div class="c-text">Link to recommendation letter, press, or post.</div></a>
-    <a class="card" href="#"><div class="thumb">Recognition 5</div><div class="c-title">Recognition 5</div><div class="c-text">Link to recommendation letter, press, or post.</div></a>
-    <a class="card" href="#"><div class="thumb">Recognition 6</div><div class="c-title">Recognition 6</div><div class="c-text">Link to recommendation letter, press, or post.</div></a>
+    <a class="card" href="#"><div class="thumb">NYC Mayor Acknowledgement</div><div class="c-title">NYC Mayor Acknowledgement -Robotics</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="thumb">Kohack 2nd</div><div class="c-title">Kohack App Development -2nd</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="thumb">Autonomous Driving Hackathon 2nd</div><div class="c-title">Autonomous Driving Hackathon -2nd</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="thumb">LOR: Head of Research, LIU</div><div class="c-title">LOR: Head of Research -LIU</div><div class="c-text"></div></a>
+    <a class="card" href="#"><div class="thumb">FTC Robotics - Air Force Sponsorship</div><div class="c-title">Air Force Sponsorship -FTC</div><div class="c-text"></div></a>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section wrap reveal">
+  <h2>Let’s connect</h2>
+  <p class="lead">
+    <strong>Email:</strong> ilaygibor2@gmail.com<br />
+    <strong>GitHub:</strong> <a href="https://github.com/IlayGibor">github.com/IlayGibor</a>
+  </p>
+  <div class="btnrow">
+    <a class="btn primary" href="mailto:your.email@example.com">Email Me</a>
+    <a class="btn" href="https://github.com/IlayGibor">GitHub Profile</a>
   </div>
 </section>
 
 <script>
-  // Reveal-on-scroll
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Subtle glow follows cursor on cards
   for(const card of document.querySelectorAll('.card')){
     card.addEventListener('mousemove', e=>{
       const r = e.currentTarget.getBoundingClientRect();
@@ -189,3 +203,6 @@
     });
   }
 </script>
+
+</body>
+</html>
